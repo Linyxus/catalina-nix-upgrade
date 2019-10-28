@@ -16,13 +16,16 @@ else
 fi
 
 # Restore /nix/store and /nix/var from Relocated Items.
-relocated='/Users/Shared/Relocated Items/Security/nix'
-if [[ -d ${relocated} && -d /nix ]]; then
-  if [[ -d ${relocated}/store ]]; then
-    sudo mv "${relocated}/store" /nix/
-  fi
-  if [[ -d ${relocated}/var ]]; then
-    sudo mv "${relocated}/var" /nix/
-  fi
-  sudo rmdir "${relocated}"
-fi
+# relocated='/Users/Shared/Relocated Items/Security/nix'
+# if [[ -d ${relocated} && -d /nix ]]; then
+#   if [[ -d ${relocated}/store ]]; then
+#     sudo mv "${relocated}/store" /nix/
+#   fi
+#   if [[ -d ${relocated}/var ]]; then
+#     sudo mv "${relocated}/var" /nix/
+#   fi
+#   sudo rmdir "${relocated}"
+# fi
+
+# Install nix
+sh <(curl https://nixos.org/nix/install)
